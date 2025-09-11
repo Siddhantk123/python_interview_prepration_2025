@@ -28,26 +28,20 @@
 # print(word)
 
 
-# class Alpha:
-#     def __init__(self):
-#         self.msg="Alpha"
-
-#     def abc(self):
-#         print(self.msg)
-# class Beta():
-#     def __init__(self):
-#         self.msg="Beta"
-#     def abc(self):
-#         print(self.msg)
-
-# class Gama(Beta, Alpha):
-#     def __init__(self):
-#         self.msg=super().__init__()
-#         print(super().abc)
-
-# obj_gama = Gama()
-
-
-
-
+<<<<<<< HEAD
+class Alpha:
+    def __init__(self):
+        self.msg="Alpha"
+    def abc(self):
+        print(self.msg)
+class Beta:
+    def __init__(self):
+        self.msg="Beta"
+    def abc(self):
+        print(self.msg)
+class Gama(Beta, Alpha):
+    def __init__(self):
+        Beta.__init__(self) #initialize
+        Beta.abc(self)
+obj_gama = Gama()
 
