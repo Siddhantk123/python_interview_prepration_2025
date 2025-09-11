@@ -44,8 +44,3 @@ class Gama(Beta, Alpha):
         Beta.abc(self)
 obj_gama = Gama()
 
-
-
-
-
-
