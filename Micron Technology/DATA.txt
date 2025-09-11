@@ -1,0 +1,112 @@
+======================Round 1: Python and puzzle==========================================
+1. list comprehension and dict comprehention
+soln: 
+lis=[itr for itr in range(1,11) if itr%2==0]
+print(lis)
+
+dic={index:value for index, value in enumerate[1,2,3,4,5,6,7,8,9,10] if value%2==0}
+print dic
+
+2. Find longest substring without repeating charecter.
+Soln:
+string="abcabcbb"
+final_substring={}
+
+def find_longest_substring_not_duplicate(string):
+    i,j=0,1
+    substring=string[i]
+    while j<len(string)-1:
+        if string[j] not in substring:
+            substring =substring + string[j]
+            j=j+1
+        else:
+            final_substring[substring]=len(substring)
+            i=j
+            j=j+1
+            substring=string[i]
+    print(final_substring)
+
+find_longest_substring_not_duplicate(string)
+
+3. how to merge two dict
+Sol1:
+dict1={"a":1,
+     "b":2}
+dict2={"c":1,
+      "d":2}
+dict_final=dict1
+dict_final.update(dict2)
+print(dict_final)
+
+Sonl2:
+dict1={"a":1,
+     "b":2}
+dict2={"c":1,
+      "d":2}
+
+dict_final={**dict1, **dict2}
+
+4. Find the intersection of two list
+# list_A=[1,2,3,4,5,8,9]
+# list_B=[4,5,6,7,8]
+# intersection=[4,5]
+soln:
+ def find_intersection(listA,listB):
+     intersection=[]
+     if len(list_A) != len(list_B):
+         longest_list = listA if len(list_A) > len(list_B) else list_B
+         smallest_list = listA if len(list_A) < len(list_B) else list_B
+     else:
+         longest_list=list_A
+         smallest_list=list_B
+     for value in longest_list:
+         if value in smallest_list:
+             intersection.append(value)
+     print(intersection)
+    
+ find_intersection(list_A, list_B)
+
+5. what is wrapper function/ decorater in python give example
+ def logging(func):
+     def wrapper(*args, **kwargs):
+         print("pre_execution")
+         func(*args, **kwargs)
+         print("post_execution")
+     return wrapper
+
+ @logging
+ def add(a,b):
+     print(a+b)
+ add(1,2)
+
+Puzzle:
+2 jug- capacity 3,5 lit
+unlimited source of water
+measure 4 lit using both the jug
+soln:
+fill 5 lit 
+pore 3 lit on the other jug
+remaining 2lit on 5lit jug:  and 3 lit on 3 lit jug
+pore out 3 lit jug water
+move 2 lit water fro 5 lit jug on 3 lit jug
+fill 5 lit jug
+move 1 lit from 5 lit jug to 3 lit jug
+now 5 lit jug will have 4 lit water
+
+======================================Round2======================================
+NVME:
+1. Arbitration
+2. Write amplification
+3. Wear leaveling
+4. Option to choose any command and explain in detail
+5. Queue logic of nvme firmware.
+6. Use of phase bit in detail.
+
+===================================Round 3========================================
+NVME:
+1. Experiance of SSD
+2. Any customer defect you have raised and it has big impact. explain 
+3. firmware download and commit logic and explain about type of cmmit amplification
+4. Resets and its type.
+5. QLC depth
+6. chache memory and dram area in ssd. 
