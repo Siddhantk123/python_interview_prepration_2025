@@ -28,6 +28,7 @@
 # print(word)
 
 
+<<<<<<< HEAD
 class Alpha:
     def __init__(self):
         self.msg="Alpha"
