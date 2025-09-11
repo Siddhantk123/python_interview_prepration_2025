@@ -25,10 +25,6 @@
 # except Exception as e:
 #     pass
 
-# print(word)
-
-
-<<<<<<< HEAD
 class Alpha:
     def __init__(self):
         self.msg="Alpha"
