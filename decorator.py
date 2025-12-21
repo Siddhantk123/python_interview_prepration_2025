@@ -32,7 +32,7 @@ def check_palindrome(number):
 @add_logging
 def fibonaci_series(number):
     lis=[0,1]
-    itr=3
+    itr=2
     while itr <= number:
         value = lis[-1]+lis[-2]
         lis.append(value)
@@ -46,6 +46,6 @@ def fibonaci_series(number):
     #         lis.append(lis[itr-1]+lis[itr-2])
     # print(lis)
 
-fibonaci_series(20)
+fibonaci_series(5)
 #[0, 1, 1, 2, 3, 5] number=5
 
