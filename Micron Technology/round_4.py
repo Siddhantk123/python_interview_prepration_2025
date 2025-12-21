@@ -23,7 +23,7 @@
 # try:
 #     word = re.findall(pattern=r"\w+", string=input)
 # except Exception as e:
-#     pass
+#     pass  
 
 # print(word)       
 class Alpha:
@@ -34,8 +34,8 @@ class Alpha:
 class Beta:
     def __init__(self):
         self.msg="Beta"
-    def abc(self):
-        print(self.msg)
+    def abc(self):  
+        print(self.msg)                 
 class Gama(Beta, Alpha):
     def __init__(self):
         Beta.__init__(self) #initialize
