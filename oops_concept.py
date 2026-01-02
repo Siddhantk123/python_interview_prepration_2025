@@ -51,6 +51,7 @@ innova_obj.feature()
 # fortuner_obj.post_brand_name()
 # fortuner_obj.feature()
 
+# class, object,inheritance and polymorphism
 class Father:
     def show_father_name(self):
         print("Father's name is: Mr B.N Mishra")
