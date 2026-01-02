@@ -70,13 +70,13 @@ class linked_list_operation:
         print(self.tail.data, end="->None")
 
 linked_list_operation_obj = linked_list_operation()
-# linked_list_operation_obj.insertion_at_end(10)
+# linked_list_operation_obj.insertion_at_end(1)
 # linked_list_operation_obj.insertion_at_end(11)
 # linked_list_operation_obj.insertion_at_end(12)
 # linked_list_operation_obj.insertion_at_end(15)
 # linked_list_operation_obj.insertion_at_start(21)
 # linked_list_operation_obj.insertion_at_end(20)
-linked_list_operation_obj.delete_node_from_list(12)
+# linked_list_operation_obj.delete_node_from_list(12)
 linked_list_operation_obj.print_linked_list()
 
 

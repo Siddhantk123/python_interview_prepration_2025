@@ -9,7 +9,7 @@ def two_sum_prob(nums, target):
     for index,value in enumerate(nums):
         if target-value in nums:
             if target-value == value:
-                pass
+                continue
             if value not in target_val:
                 print([index, nums.index(target-value)])
                 target_val.append(target-value)
@@ -135,23 +135,19 @@ Input: "babad"
 Output: "bab"  # or "aba"
 """
 def longest_palidrome_substring(string):
-    string_length={}
-    for index,char in enumerate(string):
-        substring = char
-        for index1, char1 in enumerate(string):
-            if string[index:index1+1] == string[index:index1+1][::-1]:
-                substring=string[index:index1+1]
-        string_length[substring] = len(substring)
+    substring_len={}
+    for i in range(len(string)):
+        for j in range (len(string)):
+            if string[i:j+1] == string[i:j+1][::-1]:
+                substring_len[string[i:j+1]] = len(string[i:j+1])
     
-    # print(string_length)
-    longest_val =0
-    for key,value in string_length.items():
-        if value >= longest_val:
-            longest_val=value
-   
-    for key,value in string_length.items():
-        if value == longest_val:
-            print(f"longest substring: {key}")
+    longest_len=0
+    for length in substring_len.values():
+        if length > longest_len:
+            longest_len = length
+    for substring, length in substring_len.items():
+        if length == longest_len:
+            print(f"{substring},{longest_len}")
         
 # longest_palidrome_substring("abhhbkl")
 # longest_palidrome_substring("babad")
@@ -291,9 +287,51 @@ def sum_of_digit_until_single(num):
             sum=sum+digit
             num=num//10
         return sum
+
     while len(str(num)) != 1:
         num = sum_of_digit(num)
     print(num)
 
 # sum_of_digit_until_single(1234)
-sum_of_digit_until_single(5674)
+# sum_of_digit_until_single(5674)
+
+'''
+find first occuring unique charecter in the given string. 
+'''
+def find_first_occ_unique_char(string):
+    string=string.lower()
+    char_frq={}
+    for char in string:
+        if char not in char_frq:
+            char_frq[char]=1
+        else:
+            char_frq[char] +=1
+    for char in string:
+        if char_frq[char] == 1:
+            return char
+    return -1
+
+# print(find_first_occ_unique_char("Abcadbakl"))
+
+"""
+find nth occuring unique charecter in a string
+i/p=Abcadbakl, occ_counter=2
+o/p=d
+"""
+def find_first_occ_unique_char(string, occ_counter):
+    string=string.lower()
+    char_frq={}
+    for char in string:
+        if char not in char_frq:
+            char_frq[char]=1
+        else:
+            char_frq[char] +=1
+    counter=1
+    for char in string:
+        if char_frq[char] == 1:
+            if counter == occ_counter:
+                return char
+            counter +=1
+    return -1
+
+print(find_first_occ_unique_char(string="Abcadbakl", occ_counter=2))

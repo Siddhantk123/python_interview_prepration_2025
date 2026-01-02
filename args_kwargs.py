@@ -7,4 +7,4 @@ func(5,6)
 # **kwargs: {} <- dictonary
 
 # func(a=10, b=20)
-#**kwargs: {'a': 10, 'b': 20}
+# **kwargs: {'a': 10, 'b': 20}

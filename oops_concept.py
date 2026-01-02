@@ -51,6 +51,7 @@ innova_obj.feature()
 # fortuner_obj.post_brand_name()
 # fortuner_obj.feature()
 
+# class, object,inheritance and polymorphism
 class Father:
     def show_father_name(self):
         print("Father's name is: Mr B.N Mishra")
@@ -61,22 +62,22 @@ class Mother:
 class child1(Father,Mother):
     def __init__(self, name):
         self.name = name
-    def child1_name(self):
+    def child_name(self):
         print(f"child1 name: {self.name}")
     
 class child2(Father,Mother):
     def __init__(self, name):
         self.name = name
-    def child2_name(self):
+    def child_name(self):
         print(f"child1 name: {self.name}")
 
 # obj_child1 = child1(name="Siddhant")
-# obj_child1.child1_name()
+# obj_child1.child_name()
 # obj_child1.show_father_name()
 # obj_child1.show_mother_name()
 
 # obj_child2 = child2(name="Adarsh")
-# obj_child2.child2_name()
+# obj_child2.child_name()
 # obj_child2.show_father_name()
 # obj_child2.show_mother_name()
 """

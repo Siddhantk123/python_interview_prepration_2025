@@ -29,16 +29,21 @@
 class Alpha:
     def __init__(self):
         self.msg="Alpha"
-    def abc(self):
+    def abc_alpha(self):
         print(self.msg)
 class Beta:
     def __init__(self):
         self.msg="Beta"
-    def abc(self):  
+    def abc_beta(self):  
         print(self.msg)                 
 class Gama(Beta, Alpha):
     def __init__(self):
-        Beta.__init__(self) #initialize
-        Beta.abc(self)
+        self.msg="Gamma"
+    def abc_gamma(self):  
+        print(self.msg)
+        
 obj_gama = Gama()
+obj_gama.abc_alpha()
+obj_gama.abc_beta()
+obj_gama.abc_gamma()
 
