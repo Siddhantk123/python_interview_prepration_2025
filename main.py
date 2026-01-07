@@ -351,3 +351,4 @@ def find_nth_occ_unique_char(string, occ_counter):
 
 # print(find_nth_occ_unique_char(string="Abcadbakl", occ_counter=2))
 
+print(find_first_occ_unique_char(string="Abcadbakl", occ_counter=2))

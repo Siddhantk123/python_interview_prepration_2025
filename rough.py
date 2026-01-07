@@ -56,6 +56,18 @@ list_2= [1,2,3]
 # print(id(list_1))
 # print(id(list_2))
 # print(list_1 is list_2)
+# a= 5
+# b=5
+# print(a is b)
+# print(a == b)
+# print(id(a))
+# print(id(b))
+
+# list_1 = [1,2,3]
+# list_2= [1,2,3]
+# print(id(list_1))
+# print(id(list_2))
+# print(list is list_2)
 # print(list_1 == list_2)
 
 # dict_1={"a":1,
@@ -81,7 +93,7 @@ list_2= [1,2,3]
 #         for word in word_list[1:]:
 #             if index > len(word)-1:
 #                 flag=False
-#             elif value == word[index]:
+#             if value == word[index]:
 #                 flag = True
 #             else:
 #                 flag = False
@@ -114,6 +126,20 @@ def longest_possible_palidrome_substring(string):
     for substring, length in substring_len.items():
         if length == longest_len:
             print(f"{substring},{longest_len}")
+# def longest_possible_palidrome_substring(string):
+#     substring_len={}
+#     for i in range(len(string)):
+#         for j in range (len(string)):
+#             if string[i:j+1] == string[i:j+1][::-1]:
+#                 substring_len[string[i:j+1]] = len(string[i:j+1])
+    
+#     longest_len=0
+#     for length in substring_len.values():
+#         if length > longest_len:
+#             longest_len = length
+#     for substring, length in substring_len.items():
+#         if length == longest_len:
+#             print(f"{substring},{longest_len}")
 
 # longest_possible_palidrome_substring("babad")
 
@@ -228,6 +254,8 @@ dir = os.listdir()
 for file in dir:
     if file.endswith(".py"):  #string.endswith() works
         print(file, end=",")
+
+# os.system(command="dir")
 
 # def even(num):
 #     if num % 2 == 0:
