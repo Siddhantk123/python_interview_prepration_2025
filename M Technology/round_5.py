@@ -1,18 +1,18 @@
 """
 
 """
-# class A:
-#     def __init__(self, msg):
-#         self.msg=msg
-#     def show_msg(self):
-#         print (self.msg)
+class A:
+    def __init__(self, msg):
+        self.msg=msg
+    def show_msg(self):
+        print (self.msg)
 
-# class B(A):
-#     def __init__(self,msg):
-#         super().__init__(msg)
+class B(A):
+    def __init__(self, msg):
+        self.msg=msg
+        super().show_msg()
     
-# obj_classB = B(msg="obj of class B")
-# obj_classB.show_msg(
+# obj_classB = B(msg="object of class B")
 
 """
 lis =[1,2,3,4,1,2,3,4]
@@ -36,6 +36,19 @@ def convert(lis):
     print(final_list_2)
     print(final_list_1)
 
-convert([1,2,3,4,1,2,3,4])
+# convert([1,2,3,4,1,2,3,4])
+#method 2
+"""
+lis =[1,2,3,4,1,2,3,4]
+convert = [1,1,2,2,3,3,4,4]
+unique=[1,2,3,4]
+"""
+lis =[1,2,3,4,1,2,3,4]
+convert=sorted(lis)
+unique=list(set(lis))
+print(convert)
+print(unique)
+
+
 
         

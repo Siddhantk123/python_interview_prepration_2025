@@ -222,6 +222,7 @@ def max_consicutive_0_or_1(arr):
                 counter_list.append(counter)
                 flag=False
                 counter=0
+
         counter_list.append(counter)
         # print(counter_list)
         return max(counter_list)
@@ -334,4 +335,19 @@ def find_first_occ_unique_char(string, occ_counter):
             counter +=1
     return -1
 
-print(find_first_occ_unique_char(string="Abcadbakl", occ_counter=2))
+# print(find_first_occ_unique_char(string="Abcadbakl", occ_counter=2))
+
+#method2 slicing
+def find_nth_occ_unique_char(string, occ_counter):
+    counter=0
+    for index,charecter in enumerate(string.lower()):
+        current_char = charecter
+        remaining_string = string[:index]+string[index+1:]
+        if current_char not in remaining_string:
+            counter +=1
+            if counter == occ_counter:
+                return current_char
+    return -1
+
+# print(find_nth_occ_unique_char(string="Abcadbakl", occ_counter=2))
+

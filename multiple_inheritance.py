@@ -16,10 +16,10 @@ class C(B):
     def show_C(self):
         print(f"showing msg from class C: {self.msg}")
     
-obj_C= C(msg="object of class C")
-obj_C.show_C()
-obj_C.show_B()
-obj_C.show_A()
+# obj_C= C(msg="object of class C")
+# obj_C.show_C()
+# obj_C.show_B()
+# obj_C.show_A()
 
 
 class D:
@@ -40,7 +40,7 @@ class F(D,E):
     def show_msg_F(self):
         print(f"showing msg from class F: {self.msg}")
 
-obj_F = F(msg="object of class F")
-obj_F.show_msg_D()
-obj_F.show_msg_E()
-obj_F.show_msg_F()
+# obj_F = F(msg="object of class F")
+# obj_F.show_msg_D()
+# obj_F.show_msg_E()
+# obj_F.show_msg_F()

@@ -18,14 +18,16 @@
 # output:[apple,grapes,pineapple,dragon,orange]
 # """
 # import re
+# input= "apple,grape.pineaple/orange\\dragon:"
+# word = re.findall(pattern=r"\w+", string=input)
+# print(word)
 
-# input= "apple,grape.pineaple/orange\dragon:"
-# try:
-#     word = re.findall(pattern=r"\w+", string=input)
-# except Exception as e:
-#     pass  
+# single_word = re.search(pattern=r"(\w+)", string=input)
+# print(single_word.group(1))
 
-# print(word)       
+# single_word = re.match(pattern=r"(\w+)", string=input)
+# print(single_word.group(1))
+
 class Alpha:
     def __init__(self):
         self.msg="Alpha"
@@ -42,8 +44,8 @@ class Gama(Beta, Alpha):
     def abc_gamma(self):  
         print(self.msg)
         
-obj_gama = Gama()
-obj_gama.abc_alpha()
-obj_gama.abc_beta()
-obj_gama.abc_gamma()
+# obj_gama = Gama()
+# obj_gama.abc_alpha()
+# obj_gama.abc_beta()
+# obj_gama.abc_gamma()
 
