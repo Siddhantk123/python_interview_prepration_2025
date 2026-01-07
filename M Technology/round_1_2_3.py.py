@@ -31,23 +31,23 @@ final_substring={}
 
 # find_longest_substring_not_duplicate(string)
 
-# list_A=[1,2,3,4,5,8,9]
-# list_B=[4,5,6,7,8]
-# intersection=[4,5]
+list_A=[1,2,3,4,5,8,9]
+list_B=[4,5,6,7,8]
+# intersection=[4,5,8]
 
-# def find_intersection(listA,listB):
-#     intersection=[]
-#     if len(list_A) != len(list_B):
-#         longest_list = listA if len(list_A) > len(list_B) else list_B
-#         smallest_list = listA if len(list_A) < len(list_B) else list_B
-#     else:
-#         longest_list=list_A
-#         smallest_list=list_B
+def find_intersection(listA,listB):
+    intersection=[]
+    if len(list_A) != len(list_B):
+        longest_list = listA if len(list_A) > len(list_B) else list_B
+        smallest_list = listA if len(list_A) < len(list_B) else list_B
+    else:
+        longest_list=list_A
+        smallest_list=list_B
 
-#     for value in longest_list:
-#         if value in smallest_list:
-#             intersection.append(value)
-#     print(intersection)
+    for value in longest_list:
+        if value in smallest_list:
+            intersection.append(value)
+    print(intersection)
 
 # find_intersection(list_A, list_B)
 
@@ -61,6 +61,6 @@ def logging(func):
 @logging
 def add(a,b):
     print(a+b)
-add(1,2)
+# add(1,2)
 
 

@@ -19,7 +19,7 @@ class TestRail:
 # test_rail.get_run_data()
 
 """
-inheritance: child class inherit the properties of a parent class
+inheritance: child class inherit the properties and features of parent class
 """
 
 class Toyota:
@@ -47,7 +47,7 @@ innova_obj=Innova(brand_name="Toyota")
 innova_obj.feature()
 
 # print("\nData of Fortuner")
-# fortuner_obj=Innova(brand_name="Toyota")
+# fortuner_obj=Fortuner(brand_name="Toyota")
 # fortuner_obj.post_brand_name()
 # fortuner_obj.feature()
 
@@ -69,7 +69,7 @@ class child2(Father,Mother):
     def __init__(self, name):
         self.name = name
     def child2_name(self):
-        print(f"child1 name: {self.name}")
+        print(f"child2 name: {self.name}")
 
 # obj_child1 = child1(name="Siddhant")
 # obj_child1.child1_name()
