@@ -1,6 +1,9 @@
 # lis=[itr for itr in range(1,11) if itr%2==0]
 # print(lis)
 
+# lis=[[itr,"even"] for itr in range(1,11) if itr%2==0]
+# print(lis)
+
 # dic={index:value for index, value in enumerate([1,2,3,4,5,6,7,8,9,10]) if value%2==0}
 # print(dic)
 # dict1={"a":1,
@@ -12,15 +15,21 @@
 # dict_final=dict1
 # dict_final.update(dict2)
 # print(dict_final)
+
+def keyword_args(*args, **kwargs):
+    print(args)
+    print(kwargs)
+# keyword_args(1,2,a=1,b=2)
+
 string="abcabcbb"
 final_substring={}
 
 # def find_longest_substring_not_duplicate(string):
 #     i,j=0,1
 #     substring=string[i]
-#     while j<len(string)-1:
+#     while j<len(string):
 #         if string[j] not in substring:
-#             substring =substring + string[j]
+#             substring +=string[j]
 #             j=j+1
 #         else:
 #             final_substring[substring]=len(substring)
@@ -37,12 +46,8 @@ list_B=[4,5,6,7,8]
 
 def find_intersection(listA,listB):
     intersection=[]
-    if len(list_A) != len(list_B):
-        longest_list = listA if len(list_A) > len(list_B) else list_B
-        smallest_list = listA if len(list_A) < len(list_B) else list_B
-    else:
-        longest_list=list_A
-        smallest_list=list_B
+    longest_list = listA if len(listA) >= len(listB) else listB
+    smallest_list = listB if len(listB) <= len(listA) else listA
 
     for value in longest_list:
         if value in smallest_list:

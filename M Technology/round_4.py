@@ -3,24 +3,34 @@
 # output:4321
 # """
 
-# def reverse_num(num):
-#     rev=0
-#     while num > 0:
-#         digit = num%10
-#         rev = rev*10+digit 
-#         num=num//10
-#     print(rev)
-
+def reverse_num(num):
+    rev=0
+    while num > 0:
+        digit = num%10
+        rev = rev*10+digit 
+        num=num//10
+    print(rev)
 # reverse_num(1234)
 
-# """
-# input: "apple,grape.pineaple/orange\dragon:"
-# output:[apple,grapes,pineapple,dragon,orange]
-# """
-# import re
-# input= "apple,grape.pineaple/orange\\dragon:"
-# word = re.findall(pattern=r"\w+", string=input)
-# print(word)
+'''
+reverse string without slicing
+'''
+def reverse_string(string):
+    rev_string=""
+    for char in string:
+        rev_string=char+rev_string
+    return rev_string
+
+# print(reverse_string("abcd"))
+
+"""
+input: "apple,grape.pineaple/orange\dragon:"
+output:[apple,grapes,pineapple,dragon,orange]
+"""
+import re
+input= "apple,grape.pineaple/orange\\dragon:"
+word = re.findall(pattern=r"\w+", string=input)
+print(word)
 
 # single_word = re.search(pattern=r"(\w+)", string=input)
 # print(single_word.group(1))

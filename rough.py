@@ -1,18 +1,18 @@
-# def two_sum_prob(nums, target):
-#     """
-#     return indices of two number whose addition is equal to target
-#     n1+n2=target
-#     """
-#     target_val = []
-#     for index,value in enumerate(nums):
-#         if target-value in nums:
-#             if target-value == value:
-#                 continue
-#             if value not in target_val:
-#                 print([index, nums.index(target-value)])
-#                 target_val.append(target-value)
+def two_sum_prob(nums, target):
+    """
+    return indices of two number whose addition is equal to target
+    n1+n2=target
+    """
+    target_val = []
+    for index,value in enumerate(nums):
+        if target-value in nums:
+            if target-value == value:
+                continue
+            if value not in target_val:
+                print([index, nums.index(target-value)])
+                target_val.append(target-value)
 
-# two_sum_prob([1,2,4,6,2,7,8,3,9,5], 6)
+two_sum_prob([1,2,4,6,2,7,8,3,9,5], 6)
 
 # nonlocal variable
 
@@ -31,18 +31,18 @@
 
 
 #global function
-# x= 5
-# def outer_function():
-#     x=10
-#     def inner_function():
-#         global x
-#         x +=10
-#         print(f"printing value of x from inner function: {x}") #15
-#     inner_function()
-#     print(f"printing value of x outside inner but inside outer: {x}") #10
+x= 5
+def outer_function():
+    x=10
+    def inner_function():
+        global x
+        x +=10
+        print(f"printing value of x from inner function: {x}") #15
+    inner_function()
+    print(f"printing value of x outside inner but inside outer: {x}") #10
 
-# outer_function()
-# print(f"printing value of x from outside the outer function: {x}") #15
+outer_function()
+print(f"printing value of x from outside the outer function: {x}") #15
 
 a= 5
 b=5
@@ -112,20 +112,20 @@ Input: "babad"
 Output: "bab"  # or "aba"
 """
 
-def longest_possible_palidrome_substring(string):
-    substring_len={}
-    for i in range(len(string)):
-        for j in range (len(string)):
-            if string[i:j+1] == string[i:j+1][::-1]:
-                substring_len[string[i:j+1]] = len(string[i:j+1])
+# def longest_possible_palidrome_substring(string):
+#     substring_len={}
+#     for i in range(len(string)):
+#         for j in range (len(string)):
+#             if string[i:j+1] == string[i:j+1][::-1]:
+#                 substring_len[string[i:j+1]] = len(string[i:j+1])
     
-    longest_len=0
-    for length in substring_len.values():
-        if length > longest_len:
-            longest_len = length
-    for substring, length in substring_len.items():
-        if length == longest_len:
-            print(f"{substring},{longest_len}")
+#     longest_len=0
+#     for length in substring_len.values():
+#         if length > longest_len:
+#             longest_len = length
+#     for substring, length in substring_len.items():
+#         if length == longest_len:
+#             print(f"{substring},{longest_len}")
 # def longest_possible_palidrome_substring(string):
 #     substring_len={}
 #     for i in range(len(string)):
@@ -251,9 +251,9 @@ import os
 # os.system(command="dir")
 
 dir = os.listdir()
-for file in dir:
-    if file.endswith(".py"):  #string.endswith() works
-        print(file, end=",")
+# for file in dir:
+#     if file.endswith(".py"):  #string.endswith() works
+#         print(file, end=",")
 
 # os.system(command="dir")
 
@@ -281,4 +281,60 @@ tuple_2=(1,2,3,4)
 # a=3
 # b=3
 # print(id(a)) #140709001405624
-# print(id(b)) #140709001405624
+# print(id(b)) #
+
+# n=2
+# if 1<n<3:
+#  print("found")
+
+# #list compreshention
+# lis = [itr for itr in range(1,10) if itr %2 == 0]
+# print(lis)
+
+x=1
+y=1
+z=2
+n=3
+
+# final_list = [[i,j,k] for i in range(0,x+1) for j in range(0,y+1) for k in range(0,z+1) if (i+j+k) != n]
+# print(final_list)
+
+xyz = [1,1,2,4,6]
+def possible_combination(lis):
+    combi_lis = []
+    for index, element in enumerate(lis):
+        current_ele = [element]
+        remaining_ele = lis[:index]+lis[index+1:]
+        combi_lis.append(current_ele+remaining_ele)
+    return combi_lis
+
+def possible_permutation(lis):
+    possible_per = []
+    for index, element in enumerate(lis):
+        current_ele = [element]
+        remaining_ele = lis[:index]+lis[index+1:]
+        possible_per.extend(possible_combination(current_ele+remaining_ele))
+    return possible_per
+
+def unique_list(lis):
+    unique_list=[]
+    for element in possible_permutation(xyz):
+        if element not in unique_list:
+            unique_list.append(element)
+    return unique_list
+
+# print(unique_list(possible_permutation(xyz)))
+
+# import re
+# s="aaadaa"
+# k="aa"
+# flag = False
+# for index in range(len(s)):
+#     m = re.search(r"aa", s[index:index+len(k)])
+#     if m:
+#         flag = True
+#         print((index, index+len(k)-1))
+
+# if flag is False:
+#     print((-1, -1))
+

@@ -12,7 +12,7 @@ request_data_frame={
 }
 
 df=pd.DataFrame(request_data_frame) #step 1
-df.to_excel("dummy.xlsx")           #step 2
+df.to_excel(excel_writer="dummy.xlsx", index=False)           #step 2
 """
 Name       Age
 Siddhant   27

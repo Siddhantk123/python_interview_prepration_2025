@@ -210,28 +210,46 @@ Output: 4
 """
 def max_consicutive_0_or_1(arr):
     def max_consicutive_occurance(num, arr):
-        counter=0
+        count=0
         counter_list=[]
-        flag= False
-        for value in arr:
-            if value ==  num:
-                flag=True
-                counter +=1
-
-            elif flag == True:
-                counter_list.append(counter)
-                flag=False
-                counter=0
-
-        counter_list.append(counter)
-        # print(counter_list)
+        i=0
+        j=1
+        while j < len(arr):
+            if arr[i] != num:
+                i+=1
+                j=i+1
+            elif arr[i] == num:
+                count +=1
+                while j < len(arr) and arr[j] == num:
+                     count +=1
+                     j+=1
+                counter_list.append(count)
+                count=0
+                i+=1
         return max(counter_list)
+
+        # counter=0
+        # counter_list=[]
+        # flag= False
+        # for value in arr:
+        #     if value ==  num:
+        #         flag=True
+        #         counter +=1
+
+        #     elif flag == True:
+        #         counter_list.append(counter)
+        #         flag=False
+        #         counter=0
+
+        # counter_list.append(counter)
+        # # print(counter_list)
+        # return max(counter_list)
 
     count_1_max = max_consicutive_occurance(1, arr)
     count_0_max = max_consicutive_occurance(0, arr)
     print(max(count_1_max, count_0_max))
 
-# max_consicutive_0_or_1([0, 1, 0, 1,0,0,0,0,0,1,1,1,0,0,0,0,1])
+# max_consicutive_0_or_1([0,1,0,1,1,1,1])
 
 """
 Longest Increasing Subsequence (LIS)
@@ -351,4 +369,58 @@ def find_nth_occ_unique_char(string, occ_counter):
 
 # print(find_nth_occ_unique_char(string="Abcadbakl", occ_counter=2))
 
-print(find_first_occ_unique_char(string="Abcadbakl", occ_counter=2))
+# print(find_first_occ_unique_char(string="Abcadbakl", occ_counter=2))
+
+'''
+Given a string s and an array of string words, rturn the number of words[i] that is subsecquence of s
+for example:
+input: s= "abcde", words=["a", "bb", "acd", "ace"]
+Output: 3
+There are 3 strings in words that are subsecquence of s: "a", "bb", "acd", "ace"
+
+example 2:
+s="dsahjpjauf", words=["ahjpjau", "ja", "ahbwzgqnuk", "tnmlanowax"]
+output: 
+'''
+
+def check_subsequence(s, element):
+    if len(element) == 1:
+        return True if element in s else False
+
+    flag= False
+    i=0
+    for index, char in enumerate(element):
+        while i < len(s):
+            if s[i] == char:
+                flag = True
+                i+=1
+                break
+            i+=1
+        if i == len(s) and s[i-1] ==  char and index != len(element)-1: #eg 
+            return False
+        elif i == len(s) and s[i-1] != char:
+            return False
+    return flag
+
+def subsecquence_count(s:str, words: List)-> int:
+    count = 0
+    for element in words:
+        status = check_subsequence(s, element)
+        if status:
+            count +=1
+    return count
+
+# print(subsecquence_count("abcde", ["a", "bb", "acd", "ace", "aed"])) #3
+# print(subsecquence_count("dsahjpjauf", ["ahjpjau", "ja", "ahbwzgqnuk", "tnmlanowax", "pp",]))
+
+def generator():
+    n=1
+    while True:
+        print("before")
+        yield n
+        print("after")
+        n+=1
+
+gen = generator()
+for index in range(10):
+    print(next(gen))

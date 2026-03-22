@@ -123,3 +123,24 @@ class bankAccount:
 # bank.check_balance()
 # bank.deposit_amount(amount=200000)
 # bank.check_balance()
+
+class Testing:
+    def __init__(self, name, age):
+        self.name=name
+        self.age=age
+    def show(self):
+        print("showing Testing class")
+    
+    @staticmethod
+    def show_static_method():
+        print("showing static method")
+
+class newClass(Testing):
+    def __init__(self):
+        super().__init__(name="siddhant", age="27")
+        print(self.name)
+        print(self.age)
+        print(self.name)
+        super().show()
+        super().show_static_method()
+obj = newClass()

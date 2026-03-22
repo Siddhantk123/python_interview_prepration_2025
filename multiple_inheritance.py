@@ -1,3 +1,6 @@
+'''
+Multi-level inheritance
+'''
 class A:
     def __init__(self, msg):
         self.msg=msg
@@ -21,7 +24,9 @@ class C(B):
 # obj_C.show_B()
 # obj_C.show_A()
 
-
+'''
+Multiple inheritance
+'''
 class D:
     def __init__(self, msg):
         self.msg = msg
