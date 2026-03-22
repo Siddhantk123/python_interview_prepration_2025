@@ -39,12 +39,9 @@ def fibonaci_series(number):
         itr+=1
     print(lis)
     #way 2
-    # for itr in range(2,number+1):
-    #     if itr in [0,1]:
-    #         pass
-    #     else:
-    #         lis.append(lis[itr-1]+lis[itr-2])
-    # print(lis)
+    #for itr in range(2,number+1):
+    #   lis.append(lis[itr-1]+lis[itr-2])
+    #print(lis)
 
 fibonaci_series(5)
 #[0, 1, 1, 2, 3, 5] number=5

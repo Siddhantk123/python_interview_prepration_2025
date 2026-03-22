@@ -210,7 +210,7 @@ Output: 4
 """
 def max_consicutive_0_or_1(arr):
     def max_consicutive_occurance(num, arr):
-        counter=0
+        count=0
         counter_list=[]
         flag= False
         for value in arr:
@@ -227,11 +227,28 @@ def max_consicutive_0_or_1(arr):
         # print(counter_list)
         return max(counter_list)
 
+        # counter=0
+        # counter_list=[]
+        # flag= False
+        # for value in arr:
+        #     if value ==  num:
+        #         flag=True
+        #         counter +=1
+
+        #     elif flag == True:
+        #         counter_list.append(counter)
+        #         flag=False
+        #         counter=0
+
+        # counter_list.append(counter)
+        # # print(counter_list)
+        # return max(counter_list)
+
     count_1_max = max_consicutive_occurance(1, arr)
     count_0_max = max_consicutive_occurance(0, arr)
     print(max(count_1_max, count_0_max))
 
-# max_consicutive_0_or_1([0, 1, 0, 1,0,0,0,0,0,1,1,1,0,0,0,0,1])
+# max_consicutive_0_or_1([0,1,0,1,1,1,1])
 
 """
 Longest Increasing Subsequence (LIS)

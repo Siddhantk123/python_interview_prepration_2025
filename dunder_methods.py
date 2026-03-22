@@ -13,6 +13,14 @@ class dunderMethod:
     
     def __del__(self):
         print("called __del__() method")
+    
+    def __enter__(self):
+        print("pre-execution")
+
+    def __exit__(self, exc_type, exc, tb):
+        print("post execution")
+    def __call__(self, *args, **kwds):
+        return "calling __call__ method"
 
 obj = dunderMethod(name="Siddhant", subject="Programming")
 print(obj)  #Name is:Siddhant
@@ -20,3 +28,9 @@ print(obj)  #Name is:Siddhant
 print(len(obj)) # 8
 print(obj.__dict__) #{'name': 'Siddhant', 'subject': 'Programming'}
 print(obj+obj) #10
+print(obj.__dict__)
+print(obj()) #__call__
+
+#context management
+with dunderMethod(name="siddhant", subject="computer"):
+    print("Here i am putting the logic of my code")

@@ -1,18 +1,18 @@
-# def two_sum_prob(nums, target):
-#     """
-#     return indices of two number whose addition is equal to target
-#     n1+n2=target
-#     """
-#     target_val = []
-#     for index,value in enumerate(nums):
-#         if target-value in nums:
-#             if target-value == value:
-#                 continue
-#             if value not in target_val:
-#                 print([index, nums.index(target-value)])
-#                 target_val.append(target-value)
+def two_sum_prob(nums, target):
+    """
+    return indices of two number whose addition is equal to target
+    n1+n2=target
+    """
+    target_val = []
+    for index,value in enumerate(nums):
+        if target-value in nums:
+            if target-value == value:
+                continue
+            if value not in target_val:
+                print([index, nums.index(target-value)])
+                target_val.append(target-value)
 
-# two_sum_prob([1,2,4,6,2,7,8,3,9,5], 6)
+two_sum_prob([1,2,4,6,2,7,8,3,9,5], 6)
 
 # nonlocal variable
 
@@ -31,18 +31,25 @@
 
 
 #global function
-# x= 5
-# def outer_function():
-#     x=10
-#     def inner_function():
-#         global x
-#         x +=10
-#         print(f"printing value of x from inner function: {x}") #15
-#     inner_function()
-#     print(f"printing value of x outside inner but inside outer: {x}") #10
+x= 5
+def outer_function():
+    x=10
+    def inner_function():
+        global x
+        x +=10
+        print(f"printing value of x from inner function: {x}") #15
+    inner_function()
+    print(f"printing value of x outside inner but inside outer: {x}") #10
 
-# outer_function()
-# print(f"printing value of x from outside the outer function: {x}") #15
+outer_function()
+print(f"printing value of x from outside the outer function: {x}") #15
+
+a= 5
+b=5
+# print(a is b)
+# print(a == b)
+# print(id(a)) #140709437220088
+# print(id(b)) #140709437220088
 
 a= 5
 b=5
@@ -126,6 +133,20 @@ def longest_possible_palidrome_substring(string):
     for substring, length in substring_len.items():
         if length == longest_len:
             print(f"{substring},{longest_len}")
+# def longest_possible_palidrome_substring(string):
+#     substring_len={}
+#     for i in range(len(string)):
+#         for j in range (len(string)):
+#             if string[i:j+1] == string[i:j+1][::-1]:
+#                 substring_len[string[i:j+1]] = len(string[i:j+1])
+    
+#     longest_len=0
+#     for length in substring_len.values():
+#         if length > longest_len:
+#             longest_len = length
+#     for substring, length in substring_len.items():
+#         if length == longest_len:
+#             print(f"{substring},{longest_len}")
 # def longest_possible_palidrome_substring(string):
 #     substring_len={}
 #     for i in range(len(string)):

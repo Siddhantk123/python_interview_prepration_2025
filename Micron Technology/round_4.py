@@ -30,14 +30,39 @@ class Alpha:
         self.msg="Alpha"
     def abc(self):
         print(self.msg)
+    def xyz(self):
+        print("xyz")
 class Beta:
     def __init__(self):
         self.msg="Beta"
     def abc(self):
         print(self.msg)
-class Gama(Beta, Alpha):
+class Gama(Alpha, Beta):
     def __init__(self):
         Beta.__init__(self) #initialize
-        Beta.abc(self)
-obj_gama = Gama()
+        super().abc()
+        super().xyz()
+# obj_gama = Gama()
+
+
+class Testing:
+    def __init__(self, name, age):
+        self.name=name
+        self.age=age
+    def show(self):
+        print("showing Testing class")
+    
+    @staticmethod
+    def show_static_method():
+        print("showing static method")
+
+class newClass(Testing):
+    def __init__(self):
+        super().__init__(name="siddhant", age="27")
+        print(self.name)
+        print(self.age)
+        print(self.name)
+        super().show()
+        super().show_static_method()
+obj = newClass()
 

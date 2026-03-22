@@ -1,7 +1,7 @@
 import threading
 import time
 
-def sum(a,b,**kwargs):
+def sum(a, b, **kwargs):
     n=0
     while n<100:
         print (f"sum:{a+b}")
