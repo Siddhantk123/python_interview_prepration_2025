@@ -46,8 +46,12 @@ list_B=[4,5,6,7,8]
 
 def find_intersection(listA,listB):
     intersection=[]
-    longest_list = listA if len(listA) >= len(listB) else listB
-    smallest_list = listB if len(listB) <= len(listA) else listA
+    if len(list_A) != len(list_B):
+        longest_list = listA if len(list_A) > len(list_B) else list_B
+        smallest_list = listA if len(list_A) < len(list_B) else list_B
+    else:
+        longest_list=list_A
+        smallest_list=list_B
 
     for value in longest_list:
         if value in smallest_list:

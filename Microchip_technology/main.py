@@ -1,15 +1,15 @@
 list1=[1,1,2,3,5,1,0,3,10,"ab"]
 output=[1,3] #are the repeated charecter
 
-non_repeted=[]
+li=[]
 repeted=[]
 for val in list1:
-    if val not in non_repeted:
-        non_repeted.append(val)
+    if val not in li:
+        li.append(val)
     elif val not in repeted:
         repeted.append(val)
 # print(list(set(repeted)))
-# print(repeted)
+print(repeted)
 
 # frequency problem
 # import json
@@ -47,7 +47,7 @@ def find_freq_of_substring(string:str, substring:list):
 
 string = "abCDABCDeuhriUEYREyrabcdeyr"
 substring=["abcd","eyr","yra","De"," "]
-#find_freq_of_substring(string,substring)
+# find_freq_of_substring(string,substring)
 
 #linux command
 # ls, pwd, cd <path>, /root, cd /home cd -, mkdir siddhant, touch file1, 

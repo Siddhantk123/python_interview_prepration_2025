@@ -24,6 +24,7 @@ class C(B):
 # obj_C.show_B()
 # obj_C.show_A()
 
+
 '''
 Multiple inheritance
 '''

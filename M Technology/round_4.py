@@ -12,25 +12,14 @@ def reverse_num(num):
     print(rev)
 # reverse_num(1234)
 
-'''
-reverse string without slicing
-'''
-def reverse_string(string):
-    rev_string=""
-    for char in string:
-        rev_string=char+rev_string
-    return rev_string
-
-# print(reverse_string("abcd"))
-
-"""
-input: "apple,grape.pineaple/orange\dragon:"
-output:[apple,grapes,pineapple,dragon,orange]
-"""
-import re
-input= "apple,grape.pineaple/orange\\dragon:"
-word = re.findall(pattern=r"\w+", string=input)
-print(word)
+# """
+# input: "apple,grape.pineaple/orange\dragon:"
+# output:[apple,grapes,pineapple,dragon,orange]
+# """
+# import re
+# input= "apple,grape.pineaple/orange\\dragon:"
+# word = re.findall(pattern=r"\w+", string=input)
+# print(word)
 
 # single_word = re.search(pattern=r"(\w+)", string=input)
 # print(single_word.group(1))
